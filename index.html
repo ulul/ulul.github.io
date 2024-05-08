@@ -6,14 +6,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-r from-slate-700 to-slate-900" onload="typeIntro()">
-  <div class="flex justify-center">
-    <img src="img/nuzululhuda.jpeg" class="w-40 shadow-2xl rounded-full">
+  <div class="flex justify-center p-5">
+    <img src="img/nuzululhuda.jpeg" class="w-40 shadow-2xl rounded-full drop-shadow-[0_5px_5px_rgba(0,0,0,0.5)]">
   </div>
   <div class="flex justify-center">
       <div class="pt-5">
         <p class="text-white pt-5 text-xl" id="intro"></p>
         <p class="text-white pt-2 text-md break-words whitespace-pre-line" id="detail"></p>
       </div>
+  </div>
+  <div class="flex justify-center mx-auto w-full py-5 md:w-2/5 flex-col space-y-4 text-white pt-4 opacity-0 scale-0" id="social">
+    <p class="flex justify-center p-2 border-purple">Let's conect with me</p>
+    <a href="https://www.linkedin.com/in/nuzululhuda/" class="p-2 border border-purple-500 text-center">Linkedin</a>
+    <a href="https://twitter.com/nuzululhuda_" class="p-2 border border-purple-500 text-center">Twitter</a>
   </div>
 </body>
 <script>
@@ -24,7 +29,7 @@ const speed = 50;
 let i = 0;
 function typeIntro() {
   if (i < txtIntro.length) {
-    document.getElementById("intro").innerHTML += txtIntro.charAt(i);
+    document.getElementById('intro').innerHTML += txtIntro.charAt(i);
     i++;
     setTimeout(typeIntro, speed);
   } else {
@@ -35,10 +40,12 @@ function typeIntro() {
 let j = 0;
 function typeDetail() {
   if (j < txtDetail.length) {
-    document.getElementById("detail").innerHTML += txtDetail.charAt(j);
+    document.getElementById('detail').innerHTML += txtDetail.charAt(j);
     j++;
     setTimeout(typeDetail, speed);
-  } 
+  } else {
+    document.getElementById('social').classList.add('opacity-100', 'scale-100', 'transition-opacity', 'transition-transform', 'ease-in-out', 'duration-500')
+  }
 }
 
 
